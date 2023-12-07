@@ -1,3 +1,4 @@
+// doesnt work in hackrank
 function processData(input) {
   //Enter your code here
   let k = Math.round((input.length + 1) / 2);
@@ -18,30 +19,30 @@ function processData(input) {
     decreaseArr.push(input[i]);
   }
   decreaseArr.sort().reverse();
-//   combine array
-    for (let index = 0; index < decreaseArr.length; index++) {
-      increaseArr.push(decreaseArr[index]);
-    }
-    let arrToString = increaseArr.toString()
-    let finalOutput = arrToString.replace(/,/g," ")
+  //   combine array
+  for (let index = 0; index < decreaseArr.length; index++) {
+    increaseArr.push(decreaseArr[index]);
+  }
+  let arrToString = increaseArr.toString();
+  let finalOutput = arrToString.replace(/,/g, " ");
   console.log(finalOutput);
 }
 
 let array = [1, 2, 3, 4, 5, 6, 7];
-// output should be 1 4,5,3,2
+// output should be 1 2 3 7 6 5 4
 processData(array);
 
 // hackerank version
 
 function processData(input) {
-    //Enter your code here
-     let builtArray = [];
+  //Enter your code here
+  let builtArray = [];
   for (let i = 4; i < input.length; i++) {
-    if (input[i] !== ' ') {
+    if (input[i] !== " ") {
       builtArray.push(+input[i]);
     }
   }
-   let k = Math.round((builtArray.length + 1) / 2);
+  let k = Math.round((builtArray.length + 1) / 2);
   let kCom = builtArray.length - k; //for increasing array
   let increaseArr = new Array();
   let decreaseArr = new Array();
@@ -52,7 +53,7 @@ function processData(input) {
   //removing
   for (let i = 0; i < kCom; i++) {
     builtArray.shift();
-  }  
+  }
   increaseArr.sort();
   //   decrease array
   for (i = 0; i < builtArray.length; i++) {
@@ -63,8 +64,7 @@ function processData(input) {
   for (let index = 0; index < decreaseArr.length; index++) {
     increaseArr.push(decreaseArr[index]);
   }
-  let arrToString = increaseArr.toString()
-    let finalOutput = arrToString.replace(/,/g," ")
+  let arrToString = increaseArr.toString();
+  let finalOutput = arrToString.replace(/,/g, " ");
   console.log(finalOutput);
-} 
-
+}
