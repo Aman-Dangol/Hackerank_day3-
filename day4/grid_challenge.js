@@ -3,15 +3,15 @@ function gridChallenge(grid) {
   grid.forEach((element) => {
     sorted.push(element.split("").sort()); //pushing each element into sorted after spliting them into characters and then sorting them
   });
+
+  // comparing n elements of each row
   for (let i = 0; i < sorted.length; i++) {
     for (let j = 0; j < sorted.length; j++) {
       if (j + 1 >= sorted.length) {
         break;
       }
-      console.log(j);
 
       if (sorted[j][i] > sorted[j + 1][i]) {
-        console.log("NO");
         return "NO";
       }
     }
