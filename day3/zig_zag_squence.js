@@ -27,17 +27,18 @@ function processData(input) {
   let finalOutput = arrToString.replace(/,/g, " ");
   console.log(finalOutput);
 }
-
 let array = [1, 2, 3, 4, 5, 6, 7];
-// output should be 1 2 3 7 6 5 4
+
 processData(array);
+// output should be 1 2 3 7 6 5 4
+// processData(array);
 
 // hackerank version
 
 function processData(input) {
   //Enter your code here
   let builtArray = [];
-  for (let i = 4; i < input.length; i++) {
+  for (let i = 0; i < input.length; i++) {
     if (input[i] !== " ") {
       builtArray.push(+input[i]);
     }
